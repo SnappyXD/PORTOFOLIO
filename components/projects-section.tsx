@@ -14,6 +14,8 @@ const projects = [
     tags: ["Node.js", "REST API", "Automation"],
     color: "from-green-500/20 to-emerald-500/20",
     featured: true,
+    githubUrl: "", // Dikosongkan jika tidak ada repo publik
+    liveUrl: "https://wa.me/6282245353231",
   },
   {
     id: 2,
@@ -23,6 +25,8 @@ const projects = [
     tags: ["Web Development", "Frontend", "UI/UX"],
     color: "from-blue-500/20 to-cyan-500/20",
     featured: true,
+    githubUrl: "https://github.com/SnappyXD/srbproperty",
+    liveUrl: "https://srbproperty.vercel.app/",
   },
   {
     id: 3,
@@ -32,6 +36,8 @@ const projects = [
     tags: ["AI Integration", "API", "Frontend"],
     color: "from-sky-500/20 to-indigo-500/20",
     featured: true,
+    githubUrl: "https://github.com/SnappyXD/SNAPPY-AI",
+    liveUrl: "https://snappy-ai-six.vercel.app/",
   },
   {
     id: 4,
@@ -41,6 +47,8 @@ const projects = [
     tags: ["Web Design", "UI/UX", "Education"],
     color: "from-purple-500/20 to-pink-500/20",
     featured: false,
+    githubUrl: "#",
+    liveUrl: "#",
   },
   {
     id: 5,
@@ -50,6 +58,8 @@ const projects = [
     tags: ["React", "Web App", "UI/UX"],
     color: "from-violet-500/20 to-fuchsia-500/20",
     featured: false,
+    githubUrl: "#",
+    liveUrl: "#",
   },
   {
     id: 6,
@@ -59,6 +69,8 @@ const projects = [
     tags: ["Management", "Web Development", "Database"],
     color: "from-rose-500/20 to-orange-500/20",
     featured: false,
+    githubUrl: "#",
+    liveUrl: "#",
   },
   {
     id: 7,
@@ -68,6 +80,8 @@ const projects = [
     tags: ["JavaScript", "DOM", "Animation"],
     color: "from-orange-500/20 to-red-500/20",
     featured: false,
+    githubUrl: "#",
+    liveUrl: "#",
   },
   {
     id: 8,
@@ -77,6 +91,8 @@ const projects = [
     tags: ["CSS Animation", "Design", "Interactive"],
     color: "from-teal-500/20 to-cyan-500/20",
     featured: false,
+    githubUrl: "#",
+    liveUrl: "#",
   },
   {
     id: 9,
@@ -86,6 +102,8 @@ const projects = [
     tags: ["Logic", "Problem Solving", "Algorithm"],
     color: "from-indigo-500/20 to-violet-500/20",
     featured: false,
+    githubUrl: "#",
+    liveUrl: "#",
   },
 ];
 
@@ -237,10 +255,20 @@ export function ProjectsSection() {
                           {project.title.charAt(0)}
                         </span>
                       </div>
-                      <ArrowUpRight
-                        size={16}
-                        className="text-muted-foreground group-hover:text-primary transition-colors"
-                      />
+                      {/* Tautan untuk ikon panah pada proyek biasa */}
+                      <a
+                        href={
+                          project.liveUrl !== "#" ? project.liveUrl : undefined
+                        }
+                        target={project.liveUrl !== "#" ? "_blank" : undefined}
+                        rel="noopener noreferrer"
+                        className="cursor-pointer"
+                      >
+                        <ArrowUpRight
+                          size={16}
+                          className="text-muted-foreground group-hover:text-primary transition-colors"
+                        />
+                      </a>
                     </div>
                     <h3 className="font-semibold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">
                       {project.title}
