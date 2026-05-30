@@ -140,7 +140,9 @@ export function ProjectsSection() {
                 <motion.div
                   key={project.id}
                   initial={{ opacity: 0, y: 50 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                  animate={
+                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
+                  }
                   transition={{ delay: 0.3 + index * 0.1 }}
                   onMouseEnter={() => setHoveredId(project.id)}
                   onMouseLeave={() => setHoveredId(null)}
@@ -149,14 +151,14 @@ export function ProjectsSection() {
                   <div className="glass-card rounded-2xl p-8 h-full hover:border-primary/30 transition-all duration-300 overflow-hidden">
                     {/* Background gradient */}
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                      className={`absolute inset-0 bg-linear-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                     />
 
                     <div className="relative z-10">
                       {/* Header */}
                       <div className="flex items-start justify-between mb-4">
                         <div
-                          className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${project.color} flex items-center justify-center`}
+                          className={`w-14 h-14 rounded-2xl bg-linear-to-br ${project.color} flex items-center justify-center`}
                         >
                           <span className="text-2xl font-bold text-primary">
                             {project.title.charAt(0)}
@@ -171,13 +173,13 @@ export function ProjectsSection() {
                           }
                           className="flex gap-2"
                         >
-                          <button 
+                          <button
                             className="w-10 h-10 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
                             aria-label="View on GitHub"
                           >
                             <Github size={18} />
                           </button>
-                          <button 
+                          <button
                             className="w-10 h-10 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
                             aria-label="View project"
                           >
@@ -219,7 +221,9 @@ export function ProjectsSection() {
                 <motion.div
                   key={project.id}
                   initial={{ opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                  animate={
+                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+                  }
                   transition={{ delay: 0.5 + index * 0.1 }}
                   whileHover={{ y: -5 }}
                   className="group"
@@ -227,7 +231,7 @@ export function ProjectsSection() {
                   <div className="glass-card rounded-xl p-5 h-full hover:border-primary/30 transition-all duration-300">
                     <div className="flex items-center justify-between mb-3">
                       <div
-                        className={`w-10 h-10 rounded-lg bg-gradient-to-br ${project.color} flex items-center justify-center`}
+                        className={`w-10 h-10 rounded-lg bg-linear-to-br ${project.color} flex items-center justify-center`}
                       >
                         <span className="text-sm font-bold text-primary">
                           {project.title.charAt(0)}
