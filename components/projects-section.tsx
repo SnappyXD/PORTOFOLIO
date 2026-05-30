@@ -191,18 +191,30 @@ export function ProjectsSection() {
                           }
                           className="flex gap-2"
                         >
-                          <button
-                            className="w-10 h-10 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
-                            aria-label="View on GitHub"
-                          >
-                            <Github size={18} />
-                          </button>
-                          <button
-                            className="w-10 h-10 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
-                            aria-label="View project"
-                          >
-                            <ExternalLink size={18} />
-                          </button>
+                          {/* GitHub Link */}
+                          {project.githubUrl && (
+                            <a
+                              href={project.githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-10 h-10 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
+                              aria-label="View on GitHub"
+                            >
+                              <Github size={18} />
+                            </a>
+                          )}
+                          {/* Live/External Link */}
+                          {project.liveUrl && (
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-10 h-10 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
+                              aria-label="View project"
+                            >
+                              <ExternalLink size={18} />
+                            </a>
+                          )}
                         </motion.div>
                       </div>
 
