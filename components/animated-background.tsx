@@ -71,7 +71,7 @@ export function AnimatedBackground() {
         0,
         canvas.width / 2,
         canvas.height / 2,
-        canvas.width / 1.5
+        canvas.width / 1.5,
       );
       gradient.addColorStop(0, "rgba(15, 23, 42, 0)");
       gradient.addColorStop(1, "rgba(15, 23, 42, 0)");
@@ -148,7 +148,7 @@ export function AnimatedBackground() {
       {/* Floating orbs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <motion.div
-          className="absolute w-[500px] h-[500px] rounded-full bg-primary/10 blur-[100px]"
+          className="absolute w-125 h-125 rounded-full bg-primary/10 blur-[100px]"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -161,7 +161,7 @@ export function AnimatedBackground() {
           style={{ top: "-10%", left: "-10%" }}
         />
         <motion.div
-          className="absolute w-[400px] h-[400px] rounded-full bg-accent/10 blur-[100px]"
+          className="absolute w-100 h-100 rounded-full bg-accent/10 blur-[100px]"
           animate={{
             x: [0, -80, 0],
             y: [0, 100, 0],
@@ -174,7 +174,7 @@ export function AnimatedBackground() {
           style={{ bottom: "10%", right: "-5%" }}
         />
         <motion.div
-          className="absolute w-[300px] h-[300px] rounded-full bg-cyan-500/5 blur-[80px]"
+          className="absolute w-75 h-75 rounded-full bg-cyan-500/5 blur-[80px]"
           animate={{
             x: [0, 50, 0],
             y: [0, 80, 0],
