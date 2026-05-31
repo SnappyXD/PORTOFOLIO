@@ -6,10 +6,18 @@ import { useRef } from "react";
 import { Code2, Palette, Database, Globe } from "lucide-react";
 
 const skills = [
-  { icon: Code2, label: "Frontend", items: ["HTML", "CSS", "JavaScript", "React"] },
+  {
+    icon: Code2,
+    label: "Frontend",
+    items: ["HTML", "CSS", "JavaScript", "React"],
+  },
   { icon: Palette, label: "Design", items: ["UI/UX", "Figma", "Illustrator"] },
   { icon: Database, label: "Backend", items: ["Node.js", "REST API", "SQL"] },
-  { icon: Globe, label: "Web Dev", items: ["Responsive", "SEO", "Performance"] },
+  {
+    icon: Globe,
+    label: "Web Dev",
+    items: ["Responsive", "SEO", "Performance"],
+  },
 ];
 
 export function AboutSection() {
@@ -55,35 +63,40 @@ export function AboutSection() {
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Saya adalah mahasiswa Sistem Informasi yang memiliki ketertarikan
-                besar pada perpaduan antara teknologi dan estetika visual. Fokus
-                utama saya berada di ranah{" "}
+                Saya adalah mahasiswa Sistem Informasi yang memiliki
+                ketertarikan besar pada perpaduan antara teknologi dan estetika
+                visual. Fokus utama saya berada di ranah{" "}
                 <span className="text-primary font-semibold">
                   Frontend Web Development
                 </span>{" "}
                 dan{" "}
-                <span className="text-primary font-semibold">Desain Grafis</span>.
+                <span className="text-primary font-semibold">
+                  Desain Grafis
+                </span>
+                .
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Berbekal pengalaman dalam merancang antarmuka website seperti
                 landing page properti dan portal edukasi serta membuat elemen
-                visual yang interaktif menggunakan HTML, CSS, dan JavaScript, saya
-                selalu berusaha menerjemahkan ide kreatif menjadi produk digital
-                yang tidak hanya fungsional, tetapi juga nyaman dan menarik bagi
-                pengguna.
+                visual yang interaktif menggunakan HTML, CSS, dan JavaScript,
+                saya selalu berusaha menerjemahkan ide kreatif menjadi produk
+                digital yang tidak hanya fungsional, tetapi juga nyaman dan
+                menarik bagi pengguna.
               </p>
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-6 pt-6">
                 {[
-                  { value: "6+", label: "Proyek" },
-                  { value: "2+", label: "Tahun Exp" },
+                  { value: "10+", label: "Proyek" },
+                  { value: "4+", label: "Tahun Exp" },
                   { value: "100%", label: "Dedikasi" },
                 ].map((stat, index) => (
                   <motion.div
                     key={stat.label}
                     initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    animate={
+                      isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                    }
                     transition={{ delay: 0.5 + index * 0.1 }}
                     className="text-center"
                   >
@@ -109,7 +122,11 @@ export function AboutSection() {
                 <motion.div
                   key={skill.label}
                   initial={{ opacity: 0, scale: 0.9 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                  animate={
+                    isInView
+                      ? { opacity: 1, scale: 1 }
+                      : { opacity: 0, scale: 0.9 }
+                  }
                   transition={{ delay: 0.5 + index * 0.1 }}
                   whileHover={{ scale: 1.02, y: -5 }}
                   className="glass-card rounded-2xl p-6 group cursor-pointer hover:border-primary/30 transition-all"
