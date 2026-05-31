@@ -2,9 +2,22 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Github, Instagram, Mail, ArrowDown, Code2, Database, Palette } from "lucide-react";
+import {
+  Github,
+  Instagram,
+  Mail,
+  ArrowDown,
+  Code2,
+  Database,
+  Palette,
+} from "lucide-react";
 
-const roles = ["Software Developer", "Data Analyst", "Tech Enthusiast", "UI Designer"];
+const roles = [
+  "Software Developer",
+  "Data Analyst",
+  "Tech Enthusiast",
+  "UI Designer",
+];
 
 export function HeroSection() {
   const [currentRole, setCurrentRole] = useState(0);
@@ -31,7 +44,7 @@ export function HeroSection() {
           }
         }
       },
-      isDeleting ? 50 : 100
+      isDeleting ? 50 : 100,
     );
 
     return () => clearTimeout(timeout);
@@ -103,15 +116,31 @@ export function HeroSection() {
 
             <motion.div variants={itemVariants} className="flex gap-4 mb-8">
               {[
-                { icon: Github, href: "https://github.com/SnappyXD", label: "GitHub" },
-                { icon: Instagram, href: "https://instagram.com/snapdxkz", label: "Instagram" },
-                { icon: Mail, href: "mailto:mahardikaardiansyah90@gmail.com", label: "Email" },
+                {
+                  icon: Github,
+                  href: "https://github.com/SnappyXD",
+                  label: "GitHub",
+                },
+                {
+                  icon: Instagram,
+                  href: "https://instagram.com/snapdxkz",
+                  label: "Instagram",
+                },
+                {
+                  icon: Mail,
+                  href: "mailto:mahardikaardiansyah90@gmail.com",
+                  label: "Email",
+                },
               ].map((social) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
                   target={social.href.startsWith("http") ? "_blank" : undefined}
-                  rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  rel={
+                    social.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-12 h-12 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-all"
@@ -122,7 +151,10 @@ export function HeroSection() {
               ))}
             </motion.div>
 
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-wrap gap-4"
+            >
               <motion.a
                 href="#proyek"
                 whileHover={{ scale: 1.02 }}
@@ -150,12 +182,27 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="relative hidden lg:block"
           >
-            <div className="relative w-full h-[500px]">
+            <div className="relative w-full h-125">
               {/* Floating cards */}
               {[
-                { icon: Code2, label: "Frontend", color: "from-cyan-500/20 to-blue-500/20", delay: 0 },
-                { icon: Database, label: "Backend", color: "from-teal-500/20 to-green-500/20", delay: 0.2 },
-                { icon: Palette, label: "Design", color: "from-purple-500/20 to-pink-500/20", delay: 0.4 },
+                {
+                  icon: Code2,
+                  label: "Frontend",
+                  color: "from-cyan-500/20 to-blue-500/20",
+                  delay: 0,
+                },
+                {
+                  icon: Database,
+                  label: "Backend",
+                  color: "from-teal-500/20 to-green-500/20",
+                  delay: 0.2,
+                },
+                {
+                  icon: Palette,
+                  label: "Design",
+                  color: "from-purple-500/20 to-pink-500/20",
+                  delay: 0.4,
+                },
               ].map((card, index) => (
                 <motion.div
                   key={card.label}
@@ -166,8 +213,8 @@ export function HeroSection() {
                     index === 0
                       ? "top-0 right-0"
                       : index === 1
-                      ? "top-1/3 left-0"
-                      : "bottom-0 right-1/4"
+                        ? "top-1/3 left-0"
+                        : "bottom-0 right-1/4"
                   }`}
                   style={{
                     animation: `float ${6 + index}s ease-in-out infinite`,
@@ -175,12 +222,16 @@ export function HeroSection() {
                   }}
                 >
                   <div
-                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-3`}
+                    className={`w-12 h-12 rounded-xl bg-linear-to-br ${card.color} flex items-center justify-center mb-3`}
                   >
                     <card.icon className="text-primary" size={24} />
                   </div>
-                  <h3 className="font-semibold text-foreground">{card.label}</h3>
-                  <p className="text-sm text-muted-foreground mt-1">Development</p>
+                  <h3 className="font-semibold text-foreground">
+                    {card.label}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Development
+                  </p>
                 </motion.div>
               ))}
 
