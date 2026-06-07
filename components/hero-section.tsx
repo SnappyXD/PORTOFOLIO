@@ -29,19 +29,17 @@ export function HeroSection() {
 
     const timeout = setTimeout(
       () => {
-        if (!isDeleting) {
-          if (displayText.length < currentWord.length) {
-            setDisplayText(currentWord.slice(0, displayText.length + 1));
-          } else {
-            setTimeout(() => setIsDeleting(true), 2000);
-          }
-        } else {
+        if (isDeleting) {
           if (displayText.length > 0) {
             setDisplayText(displayText.slice(0, -1));
           } else {
             setIsDeleting(false);
             setCurrentRole((prev) => (prev + 1) % roles.length);
           }
+        } else if (displayText.length < currentWord.length) {
+          setDisplayText(currentWord.slice(0, displayText.length + 1));
+        } else {
+          setTimeout(() => setIsDeleting(true), 2000);
         }
       },
       isDeleting ? 50 : 100,

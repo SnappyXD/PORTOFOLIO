@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+
 import { useRef } from "react";
-import { Mail, Send, MapPin, Phone, Github, Instagram } from "lucide-react";
+import { Mail, Send, MapPin, Github, Instagram } from "lucide-react";
 
 export function ContactSection() {
   const ref = useRef(null);
@@ -26,8 +26,16 @@ export function ContactSection() {
 
   const socialLinks = [
     { icon: Github, label: "GitHub", href: "https://github.com/SnappyXD" },
-    { icon: Instagram, label: "Instagram", href: "https://instagram.com/snapdxkz" },
-    { icon: Mail, label: "Email", href: "mailto:mahardikaardiansyah90@gmail.com" },
+    {
+      icon: Instagram,
+      label: "Instagram",
+      href: "https://instagram.com/snapdxkz",
+    },
+    {
+      icon: Mail,
+      label: "Email",
+      href: "mailto:mahardikaardiansyah90@gmail.com",
+    },
   ];
 
   return (
@@ -63,8 +71,9 @@ export function ContactSection() {
               transition={{ delay: 0.3 }}
               className="text-muted-foreground mt-4 max-w-2xl mx-auto"
             >
-              Tertarik untuk bekerja sama atau sekadar berdiskusi tentang teknologi
-              dan pengembangan sistem? Jangan ragu untuk menghubungi saya.
+              Tertarik untuk bekerja sama atau sekadar berdiskusi tentang
+              teknologi dan pengembangan sistem? Jangan ragu untuk menghubungi
+              saya.
             </motion.p>
           </div>
 
@@ -83,7 +92,9 @@ export function ContactSection() {
                     key={info.label}
                     href={info.href}
                     initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    animate={
+                      isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                    }
                     transition={{ delay: 0.5 + index * 0.1 }}
                     whileHover={{ x: 5 }}
                     className="flex items-center gap-4 glass-card rounded-xl p-5 group hover:border-primary/30 transition-all"
@@ -106,7 +117,9 @@ export function ContactSection() {
               {/* Social links */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
                 transition={{ delay: 0.7 }}
               >
                 <h3 className="text-sm font-semibold text-muted-foreground mb-4">

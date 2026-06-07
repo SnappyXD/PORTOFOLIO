@@ -23,7 +23,7 @@ export function Navbar() {
 
       // Update active section based on scroll position
       const sections = navItems.map((item) => item.href.slice(1));
-      for (const section of sections.reverse()) {
+      for (const section of sections.toReversed()) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -45,9 +45,7 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "glass py-3"
-          : "bg-transparent py-5"
+        isScrolled ? "glass py-3" : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">

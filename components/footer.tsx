@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
 
 export function Footer() {
   return (
@@ -19,9 +18,7 @@ export function Footer() {
               Mahardika Ardiansyah
             </span>
             <span>•</span>
-            <span className="flex items-center gap-1">
-              @copyright
-            </span>
+            <span className="flex items-center gap-1">@copyright</span>
           </div>
           <div className="text-sm text-muted-foreground">
             All rights reserved.

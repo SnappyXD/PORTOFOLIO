@@ -57,7 +57,7 @@ export function AnimatedBackground() {
       mouseRef.current = { x: e.clientX, y: e.clientY };
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    globalThis.addEventListener("mousemove", handleMouseMove);
 
     const animate = () => {
       if (!ctx || !canvas) return;
@@ -83,7 +83,7 @@ export function AnimatedBackground() {
         // Mouse interaction
         const dx = mouseRef.current.x - particle.x;
         const dy = mouseRef.current.y - particle.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
+        const distance = Math.hypot(dx, dy);
 
         if (distance < 150) {
           const force = (150 - distance) / 150;
@@ -113,7 +113,7 @@ export function AnimatedBackground() {
         particlesRef.current.slice(i + 1).forEach((otherParticle) => {
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+          const distance = Math.hypot(dx, dy);
 
           if (distance < 120) {
             ctx.beginPath();
@@ -133,7 +133,7 @@ export function AnimatedBackground() {
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
-      window.removeEventListener("mousemove", handleMouseMove);
+      globalThis.removeEventListener("mousemove", handleMouseMove);
       cancelAnimationFrame(animationRef.current);
     };
   }, []);

@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+
 import { useRef, useState } from "react";
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 
@@ -270,9 +270,9 @@ export function ProjectsSection() {
                       {/* Tautan untuk ikon panah pada proyek biasa */}
                       <a
                         href={
-                          project.liveUrl !== "#" ? project.liveUrl : undefined
+                          project.liveUrl === "#" ? undefined : project.liveUrl
                         }
-                        target={project.liveUrl !== "#" ? "_blank" : undefined}
+                        target={project.liveUrl === "#" ? undefined : "_blank"}
                         rel="noopener noreferrer"
                         className="cursor-pointer"
                       >
